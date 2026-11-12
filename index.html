@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' blob:; img-src 'self' blob: data:; media-src 'self' blob:; style-src 'self'; object-src 'none'">
+  <title>朝陽科大｜實習工廠 AR</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="factory.css">
+  <script defer src="factory.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="brand-icon" aria-hidden="true">朝</span>
+      <div><span class="school">朝陽科技大學　工業工程與管理系</span><h1>實習工廠 AR</h1></div>
+    </div>
+    <div id="hardware" class="hardware" hidden>
+      <span id="display-status" role="status">正在偵測眼鏡</span>
+      <button id="display-picker" class="quiet" type="button">眼鏡輸出</button>
+    </div>
+  </header>
+  <main>
+    <nav class="modes" aria-label="體驗模式">
+      <button type="button" id="mode-virtual" aria-pressed="true"><span class="mode-icon">◈</span>虛擬機台練習</button>
+      <button type="button" id="mode-field" aria-pressed="false"><span class="mode-icon">▣</span>實機掃碼教學</button>
+    </nav>
+    <section id="virtual" class="workspace">
+      <article class="viewer">
+        <header class="viewer-head"><div><p class="kicker">虛擬機台</p><h2 id="model-title"></h2></div><span id="model-state" class="status-chip"></span></header>
+        <div id="stage" aria-label="可旋轉的 3D 機台模型"><p id="stage-message" role="status">載入模型中</p></div>
+        <footer class="viewer-foot">
+          <span>拖曳旋轉 · 滾輪或雙指縮放</span>
+          <div class="view-buttons"><button type="button" id="view-front">正面</button><button type="button" id="view-angle">斜角</button></div>
+        </footer>
+        <div id="hand-setup" class="hand-setup" hidden>
+          <div class="hand-settings">
+            <button type="button" id="hand-mode" aria-pressed="true">手勢操作</button>
+            <button type="button" id="hand-camera">前鏡頭</button>
+            <button type="button" id="hand-preview" aria-pressed="false">鏡頭預覽</button>
+            <button type="button" id="hand-mirror">眼鏡全螢幕</button>
+          </div>
+          <p id="hand-camera-state" role="status"></p>
+          <p id="hand-label">把手伸到前鏡頭可見處</p>
+        </div>
+      </article>
+      <aside class="controls">
+        <div class="control-heading"><label for="station">選擇機台</label><a id="print-link" href="labels.html" target="_blank" rel="noopener">QR 標籤</a></div>
+        <select id="station"></select>
+        <div class="control-section" id="power-panel">
+          <div class="control-heading"><strong>總電源</strong><span id="power-status"></span></div>
+          <button type="button" id="power-button"></button>
+        </div>
+        <div class="control-section" id="motor-panel">
+          <div class="control-heading"><strong>機台控制</strong></div>
+          <div class="two"><button type="button" id="start" class="primary">啟動</button><button type="button" id="stop">停止</button></div>
+          <div class="two"><button type="button" id="emergency" class="danger">急停</button><button type="button" id="ack">解除急停</button></div>
+        </div>
+        <div class="control-section">
+          <div class="control-heading"><strong>可動部件</strong><button type="button" id="reset" class="text-button">復歸機台</button></div>
+          <div id="parts"></div>
+        </div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </aside>
+    </section>
+    <section id="field" hidden>
+      <article id="scanner" class="scanner">
+        <div class="scan-intro">
+          <p class="kicker">實機教學</p><h2>掃描機台站位 QR</h2>
+          <p>將前鏡頭對準機台旁的標籤。辨識後會顯示該站的部件與學習步驟。</p>
+          <div id="browser-scan" class="scan-buttons">
+            <button type="button" class="primary" id="camera">開啟攝影機</button>
+            <label for="qr-file" class="file-button">選取 QR 圖片</label>
+            <input type="file" id="qr-file" accept="image/*" class="visually-hidden">
+          </div>
+          <button id="camera-picker" type="button" hidden>選擇眼鏡前鏡頭</button>
+          <p id="scan-status" class="feedback" role="status"></p>
+        </div>
+        <div class="scan-visual">
+          <div class="scan-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i><span>QR</span></div>
+          <video id="camera-preview" muted playsinline hidden></video>
+        </div>
+      </article>
+      <article id="lesson" class="lesson" hidden>
+        <div class="lesson-header"><div><p class="kicker">站位已識別</p><h2 id="lesson-title"></h2></div><button type="button" id="rescan">掃描其他機台</button></div>
+        <div class="lesson-body" aria-live="polite"><span class="lesson-count" id="lesson-count"></span><h3 id="step-title"></h3><p id="step-copy"></p></div>
+        <footer class="lesson-footer"><button id="step-prev" type="button">上一步</button><button id="step-next" class="primary" type="button">下一步</button><button id="practice" type="button">在虛擬機台練習</button></footer>
+      </article>
+    </section>
+    <section id="hud" hidden aria-live="polite">
+      <p id="hud-status" class="kicker"></p><h2 id="hud-title"></h2><p id="hud-copy"></p>
+      <div id="hud-machine" hidden>
+        <div class="hud-model">
+          <div id="hud-stage"></div>
+          <p id="hud-model-error" hidden></p>
+          <p id="hud-hand-label">把手伸到前鏡頭可見處</p>
+        </div>
+        <aside id="hud-controls" aria-label="機台手勢控制"></aside>
+      </div>
+      <p id="hud-camera-state" hidden></p>
+      <button type="button" id="hud-exit" hidden>退出全螢幕</button>
+    </section>
+    <p id="fatal" class="feedback" role="alert" hidden></p>
+  </main>
+  <div id="hand-pointer" aria-hidden="true" hidden></div>
+</body>
+</html>

@@ -1,0 +1,1127 @@
+{
+  "stations": [
+    {
+      "id": "LATHE_01",
+      "kind": "lathe",
+      "title": "車 1｜威赫車床"
+    },
+    {
+      "id": "LATHE_02",
+      "kind": "lathe",
+      "title": "車 2｜威赫車床"
+    },
+    {
+      "id": "LATHE_03",
+      "kind": "lathe",
+      "title": "車 3｜威赫車床"
+    },
+    {
+      "id": "LATHE_04",
+      "kind": "lathe",
+      "title": "車 4｜威赫車床"
+    },
+    {
+      "id": "LATHE_05",
+      "kind": "lathe",
+      "title": "車 5｜威赫車床"
+    },
+    {
+      "id": "TURRET_01",
+      "kind": "turret",
+      "title": "銑 1｜砲塔銑床"
+    },
+    {
+      "id": "TURRET_02",
+      "kind": "turret",
+      "title": "銑 2｜砲塔銑床"
+    },
+    {
+      "id": "TURRET_03",
+      "kind": "turret",
+      "title": "銑 3｜砲塔銑床"
+    },
+    {
+      "id": "H_MILL_01",
+      "kind": "horizontal",
+      "title": "銑 4｜臥式銑床"
+    },
+    {
+      "id": "POWER_MAIN",
+      "kind": "power",
+      "title": "中央電控箱｜總電源"
+    },
+    {
+      "id": "SCROLL_01",
+      "kind": "scroll",
+      "title": "木 1｜木工線鋸"
+    },
+    {
+      "id": "SCROLL_02",
+      "kind": "scroll",
+      "title": "木 2｜木工線鋸"
+    },
+    {
+      "id": "BENCH_01",
+      "kind": "bench",
+      "title": "鉗 1｜鉗工工作桌"
+    },
+    {
+      "id": "BENCH_02",
+      "kind": "bench",
+      "title": "鉗 2｜鉗工工作桌"
+    },
+    {
+      "id": "BENCH_03",
+      "kind": "bench",
+      "title": "鉗 3｜鉗工工作桌"
+    },
+    {
+      "id": "BENCH_04",
+      "kind": "bench",
+      "title": "鉗 4｜鉗工工作桌"
+    },
+    {
+      "id": "BAND_01",
+      "kind": "bandsaw",
+      "title": "DY-360 帶鋸 01"
+    },
+    {
+      "id": "BAND_02",
+      "kind": "bandsaw",
+      "title": "DY-360 帶鋸 02"
+    },
+    {
+      "id": "DRILL_01",
+      "kind": "drill",
+      "title": "KINEX 鑽床 01"
+    },
+    {
+      "id": "DRILL_02",
+      "kind": "drill",
+      "title": "KINEX 鑽床 02"
+    }
+  ],
+  "models": {
+    "lathe": {
+      "controls": [
+        {
+          "id": "carriage",
+          "label": "刀架縱向進給",
+          "step": 0.1,
+          "default": 0.28,
+          "effects": [
+            {
+              "node": "LATHE_01_Carriage",
+              "guide": "LATHE_01_Carriage_POS",
+              "kind": "slide",
+              "axis": 0,
+              "rest_location_m": [
+                0.5600000023841858,
+                0.0,
+                0.7350000143051147
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.6
+            },
+            {
+              "node": "LATHE_01_CarriageWheel",
+              "guide": "LATHE_01_CarriageWheel_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0949999988079071,
+                -0.3720000088214874,
+                -0.10300000011920929
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 25.132741228718345
+            }
+          ]
+        },
+        {
+          "id": "cross_feed",
+          "label": "刀架橫向進給",
+          "step": 0.1,
+          "default": 0.18,
+          "effects": [
+            {
+              "node": "LATHE_01_CrossSlide",
+              "guide": "LATHE_01_CrossSlide_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.07999999821186066,
+                0.02800000086426735
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.09
+            },
+            {
+              "node": "LATHE_01_CrossWheel",
+              "guide": "LATHE_01_CrossWheel_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.18299999833106995,
+                0.014000000432133675
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -18.84955592153876
+            }
+          ]
+        },
+        {
+          "id": "tail",
+          "label": "尾座套筒進給",
+          "step": 0.12,
+          "default": 0.1,
+          "effects": [
+            {
+              "node": "LATHE_01_TailQuill",
+              "guide": "LATHE_01_TailQuill_POS",
+              "kind": "slide",
+              "axis": 0,
+              "rest_location_m": [
+                -0.14800000190734863,
+                -0.019999999552965164,
+                0.3400000035762787
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.095
+            },
+            {
+              "node": "LATHE_01_TailWheel",
+              "guide": "LATHE_01_TailWheel_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.15199999511241913,
+                -0.019999999552965164,
+                0.3400000035762787
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 18.84955592153876
+            }
+          ]
+        },
+        {
+          "id": "guard",
+          "label": "翻開防屑護罩",
+          "step": 1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "LATHE_01_ChipGuard",
+              "guide": "LATHE_01_ChipGuard_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.0,
+                -0.2280000001192093,
+                0.10499999672174454
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 1.3089969389957472
+            },
+            {
+              "node": "LATHE_01_ChuckGuard",
+              "guide": "LATHE_01_ChuckGuard_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                -0.35899999737739563,
+                0.20499999821186066,
+                1.218000054359436
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -1.4835298641951802
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "LATHE_01_Chuck",
+          "guide": "LATHE_01_Chuck_POS",
+          "kind": "rotate",
+          "axis": 0,
+          "rest_location_m": [
+            -0.46000000834465027,
+            0.0,
+            1.0770000219345093
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": 160,
+          "waveform": "spin_rpm"
+        }
+      ],
+      "interlock": "guard",
+      "indicator": "LATHE_01_STATUS",
+      "buttons": {
+        "start": "LATHE_01_START",
+        "stop": "LATHE_01_STOP",
+        "emergency": "LATHE_01_EMERGENCY"
+      }
+    },
+    "turret": {
+      "controls": [
+        {
+          "id": "quill",
+          "label": "主軸下移",
+          "step": 0.1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "TURRET_01_Quill",
+              "guide": "TURRET_01_Quill_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.0,
+                -0.5120000243186951,
+                1.5130000114440918
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.125
+            },
+            {
+              "node": "TURRET_01_QuillLever",
+              "guide": "TURRET_01_QuillLever_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.1289999932050705,
+                -0.5120000243186951,
+                1.659999966621399
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -1.1
+            }
+          ]
+        },
+        {
+          "id": "feed_y",
+          "label": "工作台 Y 軸",
+          "step": 0.1,
+          "default": 0.5,
+          "effects": [
+            {
+              "node": "TURRET_01_Saddle",
+              "guide": "TURRET_01_Saddle_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.49000000953674316,
+                0.875
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.19
+            },
+            {
+              "node": "TURRET_01_YWheel",
+              "guide": "TURRET_01_YWheel_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.2939999997615814,
+                -0.0989999994635582
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 18.84955592153876
+            }
+          ]
+        },
+        {
+          "id": "feed_x",
+          "label": "工作台 X 軸",
+          "step": 0.1,
+          "default": 0.5,
+          "effects": [
+            {
+              "node": "TURRET_01_Table",
+              "guide": "TURRET_01_Table_POS",
+              "kind": "slide",
+              "axis": 0,
+              "rest_location_m": [
+                0.2150000035762787,
+                0.0,
+                0.07900000363588333
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.43
+            },
+            {
+              "node": "TURRET_01_XWheel",
+              "guide": "TURRET_01_XWheel_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.8690000176429749,
+                0.0,
+                -0.03500000014901161
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -25.132741228718345
+            }
+          ]
+        },
+        {
+          "id": "clamp",
+          "label": "虎鉗夾緊",
+          "step": 0.2,
+          "default": 0.35,
+          "effects": [
+            {
+              "node": "TURRET_01_ViseJaw",
+              "guide": "TURRET_01_ViseJaw_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.13699999451637268,
+                0.03400000184774399
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.049
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "TURRET_01_Tool",
+          "guide": "TURRET_01_Tool_POS",
+          "kind": "rotate",
+          "axis": 2,
+          "rest_location_m": [
+            0.0,
+            0.0,
+            -0.07100000232458115
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": 225,
+          "waveform": "spin_rpm"
+        }
+      ],
+      "indicator": "TURRET_01_STATUS",
+      "buttons": {
+        "start": "TURRET_01_START",
+        "stop": "TURRET_01_STOP",
+        "emergency": "TURRET_01_EMERGENCY"
+      }
+    },
+    "horizontal": {
+      "controls": [
+        {
+          "id": "quill",
+          "label": "主軸下移",
+          "step": 0.1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "H_MILL_01_Quill",
+              "guide": "H_MILL_01_Quill_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.0,
+                -0.5479999780654907,
+                1.4830000400543213
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.125
+            },
+            {
+              "node": "H_MILL_01_QuillLever",
+              "guide": "H_MILL_01_QuillLever_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.1289999932050705,
+                -0.5479999780654907,
+                1.6039999723434448
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -1.1
+            }
+          ]
+        },
+        {
+          "id": "feed_y",
+          "label": "工作台 Y 軸",
+          "step": 0.1,
+          "default": 0.5,
+          "effects": [
+            {
+              "node": "H_MILL_01_Saddle",
+              "guide": "H_MILL_01_Saddle_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.49000000953674316,
+                0.875
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.19
+            },
+            {
+              "node": "H_MILL_01_YWheel",
+              "guide": "H_MILL_01_YWheel_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.2939999997615814,
+                -0.0989999994635582
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 18.84955592153876
+            }
+          ]
+        },
+        {
+          "id": "feed_x",
+          "label": "工作台 X 軸",
+          "step": 0.1,
+          "default": 0.5,
+          "effects": [
+            {
+              "node": "H_MILL_01_Table",
+              "guide": "H_MILL_01_Table_POS",
+              "kind": "slide",
+              "axis": 0,
+              "rest_location_m": [
+                0.2150000035762787,
+                0.0,
+                0.07900000363588333
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.43
+            },
+            {
+              "node": "H_MILL_01_XWheel",
+              "guide": "H_MILL_01_XWheel_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.7039999961853027,
+                0.0,
+                -0.03500000014901161
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -25.132741228718345
+            }
+          ]
+        },
+        {
+          "id": "clamp",
+          "label": "虎鉗夾緊",
+          "step": 0.2,
+          "default": 0.35,
+          "effects": [
+            {
+              "node": "H_MILL_01_ViseJaw",
+              "guide": "H_MILL_01_ViseJaw_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.13699999451637268,
+                0.03400000184774399
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.049
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "H_MILL_01_Tool",
+          "guide": "H_MILL_01_Tool_POS",
+          "kind": "rotate",
+          "axis": 2,
+          "rest_location_m": [
+            0.0,
+            0.0,
+            -0.07100000232458115
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": 225,
+          "waveform": "spin_rpm"
+        }
+      ],
+      "indicator": "H_MILL_01_STATUS",
+      "buttons": {
+        "start": "H_MILL_01_START",
+        "stop": "H_MILL_01_STOP",
+        "emergency": "H_MILL_01_EMERGENCY"
+      }
+    },
+    "power": {
+      "controls": [
+        {
+          "id": "door",
+          "label": "電控箱門",
+          "step": 1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "POWER_MAIN_Door",
+              "guide": "POWER_MAIN_Door_POS",
+              "kind": "rotate",
+              "axis": 2,
+              "rest_location_m": [
+                -0.48899999260902405,
+                -0.2840000092983246,
+                1.0449999570846558
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -1.8325957145940461
+            }
+          ]
+        }
+      ],
+      "drive": [],
+      "manual_only": true,
+      "power_switch": {
+        "node": "POWER_MAIN_Disconnect",
+        "guide": "POWER_MAIN_Disconnect_POS",
+        "kind": "rotate",
+        "axis": 1,
+        "rest_location_m": [
+          0.35499998927116394,
+          -0.40700000524520874,
+          1.4240000247955322
+        ],
+        "rest_rotation_wxyz": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "span": 1.5707963267948966
+      },
+      "power_indicator": "POWER_MAIN_STATUS",
+      "buttons": {
+        "master_toggle": "POWER_MAIN_Disconnect_Mesh"
+      }
+    },
+    "scroll": {
+      "controls": [
+        {
+          "id": "presser",
+          "label": "壓腳高度",
+          "step": 0.12,
+          "default": 0.35,
+          "effects": [
+            {
+              "node": "SCROLL_01_PresserFoot",
+              "guide": "SCROLL_01_PresserFoot_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.052000001072883606,
+                -0.1809999942779541,
+                1.156999945640564
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.116
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "SCROLL_01_Blade",
+          "guide": "SCROLL_01_Blade_POS",
+          "kind": "slide",
+          "axis": 2,
+          "rest_location_m": [
+            0.0,
+            -0.18199999630451202,
+            1.0019999742507935
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": 0.02,
+          "waveform": "reciprocate_m"
+        }
+      ],
+      "indicator": "SCROLL_01_STATUS",
+      "buttons": {
+        "start": "SCROLL_01_START",
+        "stop": "SCROLL_01_STOP",
+        "emergency": "SCROLL_01_EMERGENCY"
+      }
+    },
+    "bench": {
+      "controls": [
+        {
+          "id": "vise_1",
+          "label": "虎鉗 1 夾緊",
+          "step": 0.1,
+          "default": 0.32,
+          "effects": [
+            {
+              "node": "BENCH_01_Vise1Jaw",
+              "guide": "BENCH_01_Vise1Jaw_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                -0.4300000071525574,
+                -1.1330000162124634,
+                0.9580000042915344
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.063
+            },
+            {
+              "node": "BENCH_01_Vise1Handle",
+              "guide": "BENCH_01_Vise1Handle_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.0989999994635582,
+                0.041999999433755875
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 18.84955592153876
+            }
+          ]
+        },
+        {
+          "id": "vise_2",
+          "label": "虎鉗 2 夾緊",
+          "step": 0.1,
+          "default": 0.32,
+          "effects": [
+            {
+              "node": "BENCH_01_Vise2Jaw",
+              "guide": "BENCH_01_Vise2Jaw_POS",
+              "kind": "slide",
+              "axis": 1,
+              "rest_location_m": [
+                0.4300000071525574,
+                0.7770000100135803,
+                0.9580000042915344
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.063
+            },
+            {
+              "node": "BENCH_01_Vise2Handle",
+              "guide": "BENCH_01_Vise2Handle_POS",
+              "kind": "rotate",
+              "axis": 1,
+              "rest_location_m": [
+                0.0,
+                -0.0989999994635582,
+                0.041999999433755875
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 18.84955592153876
+            }
+          ]
+        }
+      ],
+      "drive": [],
+      "manual_only": true,
+      "buttons": {}
+    },
+    "bandsaw": {
+      "controls": [
+        {
+          "id": "guard",
+          "label": "上輪箱檢視蓋",
+          "step": 1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "BAND_01_UpperCover",
+              "guide": "BAND_01_UpperCover_POS",
+              "kind": "rotate",
+              "axis": 2,
+              "rest_location_m": [
+                0.4300000071525574,
+                -0.17900000512599945,
+                1.5329999923706055
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 1.6755160819145565
+            }
+          ]
+        },
+        {
+          "id": "tilt",
+          "label": "工作台傾角",
+          "step": 0.2,
+          "default": 0,
+          "effects": [
+            {
+              "node": "BAND_01_Table",
+              "guide": "BAND_01_Table_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.18299999833106995,
+                -0.15000000596046448,
+                0.8479999899864197
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 0.20943951023931956
+            }
+          ]
+        },
+        {
+          "id": "guide",
+          "label": "鋸條導輪高度",
+          "step": 0.1,
+          "default": 0.15,
+          "effects": [
+            {
+              "node": "BAND_01_BladeGuide",
+              "guide": "BAND_01_BladeGuide_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.18299999833106995,
+                -0.12600000202655792,
+                1.24399995803833
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.1
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "BAND_01_SawTeeth",
+          "guide": "BAND_01_SawTeeth_POS",
+          "kind": "slide",
+          "axis": 2,
+          "rest_location_m": [
+            0.18299999833106995,
+            -0.13600000739097595,
+            0.8899999856948853
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": -0.01,
+          "waveform": "saw_pitch"
+        }
+      ],
+      "interlock": "guard",
+      "indicator": "BAND_01_STATUS",
+      "buttons": {
+        "start": "BAND_01_START",
+        "stop": "BAND_01_STOP",
+        "emergency": "BAND_01_EMERGENCY"
+      }
+    },
+    "drill": {
+      "controls": [
+        {
+          "id": "table",
+          "label": "圓工作台升降",
+          "step": 0.1,
+          "default": 0.32,
+          "effects": [
+            {
+              "node": "DRILL_01_TableLift",
+              "guide": "DRILL_01_TableLift_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.0,
+                -0.125,
+                1.024999976158142
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.177
+            },
+            {
+              "node": "DRILL_01_TableCrank",
+              "guide": "DRILL_01_TableCrank_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.09200000017881393,
+                0.22200000286102295,
+                -0.050999999046325684
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": 25.132741228718345
+            }
+          ]
+        },
+        {
+          "id": "feed",
+          "label": "三臂手柄下鑽",
+          "step": 0.1,
+          "default": 0,
+          "effects": [
+            {
+              "node": "DRILL_01_Quill",
+              "guide": "DRILL_01_Quill_POS",
+              "kind": "slide",
+              "axis": 2,
+              "rest_location_m": [
+                0.0,
+                -0.15000000596046448,
+                1.4800000190734863
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -0.156
+            },
+            {
+              "node": "DRILL_01_FeedLevers",
+              "guide": "DRILL_01_FeedLevers_POS",
+              "kind": "rotate",
+              "axis": 0,
+              "rest_location_m": [
+                0.12999999523162842,
+                -0.14399999380111694,
+                1.590999960899353
+              ],
+              "rest_rotation_wxyz": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "span": -1.5
+            }
+          ]
+        }
+      ],
+      "drive": [
+        {
+          "node": "DRILL_01_Chuck",
+          "guide": "DRILL_01_Chuck_POS",
+          "kind": "rotate",
+          "axis": 2,
+          "rest_location_m": [
+            0.0,
+            0.0,
+            -0.11500000208616257
+          ],
+          "rest_rotation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "span": 265,
+          "waveform": "spin_rpm"
+        }
+      ],
+      "indicator": "DRILL_01_STATUS",
+      "buttons": {
+        "start": "DRILL_01_START",
+        "stop": "DRILL_01_STOP",
+        "emergency": "DRILL_01_EMERGENCY"
+      }
+    }
+  }
+}
